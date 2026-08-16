@@ -1,0 +1,1553 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --dark-green: #102a1f;
+    --forest: #173f2b;
+    --green: #2e6b4f;
+    --sage: #a8c3a0;
+    --light-green: #dce9d5;
+    --cream: #f7f5ea;
+    --gold: #d8b56a;
+    --white: #ffffff;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--cream);
+    color: var(--dark-green);
+    overflow-x: hidden;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+.opening {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #285d43 0%,
+            #173f2b 45%,
+            #102a1f 100%
+        );
+
+    color: var(--cream);
+
+    z-index: 1000;
+
+    opacity: 1;
+}
+
+
+.opening-content {
+    width: min(720px, 90%);
+    text-align: center;
+    position: relative;
+    z-index: 5;
+
+    animation: fadeUp 1.5s ease;
+}
+
+
+.cross {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+
+.verse {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.3;
+}
+
+
+.reference {
+    margin-top: 20px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: .9rem;
+}
+
+
+.opening-line {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 35px auto;
+}
+
+
+.intro-text {
+    color: var(--sage);
+    font-size: .95rem;
+    margin-bottom: 25px;
+}
+
+
+.start-button {
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--cream);
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: .9rem;
+
+    transition: .4s;
+}
+
+
+.start-button:hover {
+    background: var(--gold);
+    color: var(--dark-green);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(216,181,106,.2);
+}
+
+
+.start-button span {
+    margin-left: 10px;
+}
+
+
+.music-hint {
+    margin-top: 25px;
+    color: rgba(168,195,160,.7);
+    font-size: .7rem;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   OPENING ORBITS
+===================================================== */
+
+.opening-orbit {
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(216,181,106,.15);
+
+    border-radius: 50%;
+}
+
+
+.orbit-one {
+    width: 650px;
+    height: 650px;
+
+    animation:
+        rotateCircle
+        30s
+        linear
+        infinite;
+}
+
+
+.orbit-two {
+    width: 400px;
+    height: 400px;
+
+    animation:
+        rotateCircleReverse
+        22s
+        linear
+        infinite;
+}
+
+
+.opening-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(168,195,160,.08);
+
+    filter: blur(80px);
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 18px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+
+    background:
+        rgba(16,42,31,.92);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+}
+
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+}
+
+
+.logo span {
+    color: var(--gold);
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: .72rem;
+    transition: .3s;
+}
+
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+
+.music-control {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--gold);
+
+    background: transparent;
+
+    color: var(--gold);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.music-control:hover {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(16,42,31,.55),
+            rgba(16,42,31,.82)
+        ),
+        url("pictures/1000375830.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-content {
+    color: white;
+
+    max-width: 850px;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.small-heading {
+    color: var(--sage);
+
+    letter-spacing: 2px;
+
+    font-size: .8rem;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+
+    line-height: .86;
+
+    margin-bottom: 35px;
+}
+
+
+.hero h1 span {
+    color: var(--sage);
+}
+
+
+.hero-content > p:not(.small-heading) {
+    color: #e9eee5;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+.scroll-button {
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid
+        var(--gold);
+
+    padding-bottom: 8px;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section {
+    padding: 120px 8%;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin:
+        0 auto
+        70px;
+}
+
+
+.section-number {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: .8rem;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading h2 span {
+    color: var(--green);
+}
+
+
+.section-heading p {
+    color: #607166;
+
+    font-size: .95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   TIME SECTION
+===================================================== */
+
+.time-section {
+    background: var(--light-green);
+
+    text-align: center;
+}
+
+
+.music-player {
+    max-width: 700px;
+
+    margin:
+        0 auto
+        90px;
+
+    padding:
+        24px
+        28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    text-align: left;
+
+    background: var(--dark-green);
+
+    color: var(--cream);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(16,42,31,.18);
+}
+
+
+.music-icon {
+    width: 60px;
+    height: 60px;
+
+    min-width: 60px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--dark-green);
+
+    font-size: 1.8rem;
+}
+
+
+.pulse-note {
+    animation:
+        musicPulse
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+
+.music-info {
+    flex: 1;
+}
+
+
+.now-playing {
+    color: var(--sage);
+
+    font-size: .7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+
+.music-info h3 {
+    font-size: 1.8rem;
+}
+
+
+.music-info p:last-child {
+    color: var(--sage);
+
+    font-size: .8rem;
+}
+
+
+.music-button {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        var(--gold);
+
+    background: transparent;
+
+    color: var(--cream);
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.music-button:hover {
+    background: var(--gold);
+
+    color: var(--dark-green);
+
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.timer-container {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.timer-title {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 2rem;
+
+    margin-bottom: 30px;
+}
+
+
+.timer {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.time-box {
+    padding: 30px 15px;
+
+    background: var(--cream);
+
+    border:
+        1px solid
+        rgba(46,107,79,.2);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(16,42,31,.08);
+}
+
+
+.time-box span {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 3.5rem;
+
+    color: var(--green);
+
+    line-height: 1;
+}
+
+
+.time-box small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #607166;
+
+    font-size: .75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.timer-date {
+    margin-top: 30px;
+
+    color: var(--green);
+
+    font-size: .8rem;
+
+    letter-spacing: 2px;
+}
+
+
+.timer-caption {
+    margin-top: 10px;
+
+    color: #607166;
+
+    font-size: .8rem;
+}
+
+
+/* =====================================================
+   WORSHIP
+===================================================== */
+
+.worship-section {
+    background: var(--cream);
+}
+
+
+.worship-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.worship-image {
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow:
+        20px 20px 0
+        var(--light-green);
+}
+
+
+.worship-image img {
+    width: 100%;
+
+    height: 600px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .7s;
+}
+
+
+.worship-image:hover img {
+    transform: scale(1.04);
+}
+
+
+.worship-text {
+    padding: 20px;
+}
+
+
+.quote-mark {
+    font-family: Georgia, serif;
+
+    font-size: 7rem;
+
+    line-height: .5;
+
+    color: var(--sage);
+}
+
+
+.worship-text p {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.7rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+.little-heart {
+    color: var(--green);
+
+    font-size: 2rem;
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-section {
+    background: var(--dark-green);
+
+    color: var(--cream);
+}
+
+
+.video-section
+.section-heading p {
+    color: var(--sage);
+}
+
+
+.video-section
+.section-heading h2 span {
+    color: var(--sage);
+}
+
+
+.video-container {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(216,181,106,.4);
+}
+
+
+.video-container video {
+    width: 100%;
+
+    display: block;
+
+    max-height: 650px;
+
+    background: black;
+}
+
+
+/* =====================================================
+   US
+===================================================== */
+
+.us-section {
+    background: var(--light-green);
+
+    text-align: center;
+}
+
+
+.us-photo-container {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+.photo-frame {
+    padding: 15px;
+
+    background: var(--cream);
+
+    box-shadow:
+        0 20px 50px
+        rgba(16,42,31,.15);
+}
+
+
+.photo-frame img {
+    width: 100%;
+
+    display: block;
+}
+
+
+.photo-caption {
+    margin-top: 30px;
+}
+
+
+.photo-caption p {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.8rem;
+}
+
+
+.photo-caption span {
+    color: var(--green);
+
+    font-size: 2rem;
+}
+
+
+/* =====================================================
+   SLIDESHOW
+===================================================== */
+
+.gallery-section {
+    background: var(--cream);
+}
+
+
+.slideshow {
+    max-width: 900px;
+
+    height: 600px;
+
+    margin: auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--dark-green);
+}
+
+
+.slide {
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    animation:
+        slideFade
+        .7s
+        ease;
+}
+
+
+.slide.active {
+    display: block;
+}
+
+
+.slide img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.slide-button {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid white;
+
+    background:
+        rgba(16,42,31,.6);
+
+    color: white;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.slide-button:hover {
+    background: var(--gold);
+
+    color: var(--dark-green);
+}
+
+
+.previous {
+    left: 20px;
+}
+
+
+.next {
+    right: 20px;
+}
+
+
+.dots {
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+.dot {
+    display: inline-block;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #b9c6b5;
+
+    margin: 0 5px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.active-dot {
+    background: var(--green);
+
+    transform: scale(1.3);
+}
+
+
+/* =====================================================
+   10 THINGS
+===================================================== */
+
+.things-section {
+    background: var(--dark-green);
+
+    color: var(--cream);
+}
+
+
+.things-section
+.section-heading p {
+    color: var(--sage);
+}
+
+
+.things-section
+.section-heading h2 span {
+    color: var(--sage);
+}
+
+
+.things-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.thing-card {
+    padding: 35px;
+
+    border:
+        1px solid
+        rgba(168,195,160,.25);
+
+    transition: .4s;
+
+    background:
+        rgba(255,255,255,.02);
+}
+
+
+.thing-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--gold);
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+
+.thing-card > span {
+    color: var(--gold);
+
+    font-size: .75rem;
+
+    letter-spacing: 2px;
+}
+
+
+.thing-card h3 {
+    font-size: 2rem;
+
+    margin: 12px 0;
+}
+
+
+.thing-card p {
+    color: var(--sage);
+
+    line-height: 1.7;
+
+    font-size: .9rem;
+}
+
+
+.special-card {
+    background: var(--green);
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.message-section {
+    min-height: 75vh;
+
+    background: var(--cream);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+
+.message-content span {
+    color: var(--green);
+
+    letter-spacing: 3px;
+
+    font-size: .8rem;
+
+    text-transform: uppercase;
+}
+
+
+.message-content h2 {
+    font-size:
+        clamp(3rem, 8vw, 6rem);
+
+    line-height: 1;
+
+    margin-top: 25px;
+}
+
+
+.message-content p {
+    margin-top: 20px;
+
+    color: #607166;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 1.5rem;
+}
+
+
+.heart-line {
+    color: var(--gold);
+
+    font-size: 3rem;
+
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-section {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24553c,
+            #102a1f
+        );
+
+    color: white;
+
+    padding: 50px 20px;
+}
+
+
+.question-section h1 {
+    font-size:
+        clamp(3.5rem, 9vw, 8rem);
+
+    line-height: .9;
+
+    margin: 30px 0;
+}
+
+
+.question-section h1 span {
+    color: var(--sage);
+}
+
+
+.question-small {
+    color: var(--sage);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+.question-subtitle {
+    font-size: 2rem;
+
+    color: var(--gold);
+}
+
+
+.answer-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+}
+
+
+.yes-button {
+    border:
+        1px solid
+        var(--gold);
+
+    background: transparent;
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+
+.yes-button:hover {
+    background: var(--gold);
+
+    color: var(--dark-green);
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.success-message {
+    animation: fadeUp 1s ease;
+
+    max-width: 700px;
+
+    text-align: center;
+}
+
+
+.success-heart {
+    font-size: 6rem;
+
+    color: var(--gold);
+
+    animation:
+        heartbeat
+        1s
+        infinite;
+}
+
+
+.success-message h2 {
+    font-size:
+        clamp(3rem, 8vw, 6rem);
+
+    margin: 20px 0;
+}
+
+
+.success-message p {
+    font-size: 1.1rem;
+
+    color: var(--sage);
+
+    line-height: 1.8;
+}
+
+
+.small-success {
+    margin-top: 25px;
+
+    font-size: .9rem !important;
+
+    color: var(--gold) !important;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #091d15;
+
+    color: var(--sage);
+
+    text-align: center;
+
+    padding: 35px;
+
+    font-size: .75rem;
+
+    line-height: 2;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes rotateCircle {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes rotateCircleReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+@keyframes slideFade {
+
+    from {
+        opacity: .3;
+        transform: scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+
+    .nav-links a {
+        display: none;
+    }
+
+
+    .section {
+        padding: 90px 6%;
+    }
+
+
+    .worship-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .worship-image img {
+        height: 500px;
+    }
+
+
+    .things-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .slideshow {
+        height: 500px;
+    }
+
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+
+    .verse {
+        font-size: 2rem;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .music-player {
+        padding: 20px;
+        gap: 15px;
+    }
+
+
+    .music-icon {
+        width: 45px;
+        height: 45px;
+
+        min-width: 45px;
+
+        font-size: 1.3rem;
+    }
+
+
+    .music-info h3 {
+        font-size: 1.4rem;
+    }
+
+
+    .timer {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .time-box span {
+        font-size: 2.8rem;
+    }
+
+
+    .message-content h2 br {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .opening {
+        min-height: 600px;
+    }
+
+
+    .verse {
+        font-size: 1.7rem;
+    }
+
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+
+    .worship-image img {
+        height: 400px;
+    }
+
+
+    .slideshow {
+        height: 400px;
+    }
+
+
+    .thing-card {
+        padding: 25px;
+    }
+
+}

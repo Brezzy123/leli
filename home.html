@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You 💚</title>
+
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<section id="opening" class="opening">
+
+    <div class="opening-orbit orbit-one"></div>
+    <div class="opening-orbit orbit-two"></div>
+    <div class="opening-glow"></div>
+
+    <div class="opening-content">
+
+        <div class="cross">
+            ✝
+        </div>
+
+        <p class="verse">
+            "Though one may be overpowered, two can defend
+            themselves. A cord of three strands is not quickly broken."
+        </p>
+
+        <p class="reference">
+            — Ecclesiastes 4:12
+        </p>
+
+        <div class="opening-line"></div>
+
+        <p class="intro-text">
+            Maybe it's not just about two people...
+        </p>
+
+        <button
+            id="startButton"
+            class="start-button"
+            type="button"
+        >
+            Begin Our Story
+            <span>→</span>
+        </button>
+
+        <p class="music-hint">
+            ♪ Turn your volume up
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main id="main-content" class="hidden">
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        For You <span>♡</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#our-time">
+            Our Story
+        </a>
+
+        <a href="#worship">
+            Worship
+        </a>
+
+        <a href="#video">
+            Favourite
+        </a>
+
+        <a href="#us">
+            Us
+        </a>
+
+        <a href="#things">
+            10 Things
+        </a>
+
+        <button
+            id="musicControl"
+            class="music-control"
+            type="button"
+            title="Play music"
+        >
+            ♪
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-heading">
+            Since July 10th, 2026
+        </p>
+
+        <h1>
+            Every Conversation
+            <br>
+            Led Me <span>Here</span>
+        </h1>
+
+        <p>
+            I could've just sent you a paragraph...
+            but I wanted to build you something instead.
+        </p>
+
+        <a
+            href="#our-time"
+            class="scroll-button"
+        >
+            Continue ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OUR TIME
+===================================================== -->
+
+<section
+    id="our-time"
+    class="section time-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            01
+        </span>
+
+        <h2>
+            Since <span>That Day</span>
+        </h2>
+
+        <p>
+            The day we started talking...
+            and somehow every day after became part of the story.
+        </p>
+
+    </div>
+
+
+
+    <!-- MUSIC -->
+
+    <div class="music-player">
+
+        <div class="music-icon">
+            <span class="pulse-note">
+                ♪
+            </span>
+        </div>
+
+        <div class="music-info">
+
+            <p class="now-playing">
+                Now playing
+            </p>
+
+            <h3>
+                Our Song
+            </h3>
+
+            <p>
+                A little soundtrack for our story.
+            </p>
+
+        </div>
+
+        <button
+            id="musicButton"
+            class="music-button"
+            type="button"
+            title="Play music"
+        >
+            ▶
+        </button>
+
+
+        <!--
+            IMPORTANT:
+            Put your song here:
+
+            pictures/our-song.mp3
+        -->
+
+        <audio
+            id="ourSong"
+            loop
+            preload="auto"
+        >
+
+            <source
+                src="music/honeycomb.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+    </div>
+
+
+
+    <!-- TIMER -->
+
+    <div class="timer-container">
+
+        <p class="timer-title">
+            We've been talking for...
+        </p>
+
+
+        <div class="timer">
+
+            <div class="time-box">
+
+                <span id="days">
+                    0
+                </span>
+
+                <small>
+                    Days
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="hours">
+                    00
+                </span>
+
+                <small>
+                    Hours
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="minutes">
+                    00
+                </span>
+
+                <small>
+                    Minutes
+                </small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span id="seconds">
+                    00
+                </span>
+
+                <small>
+                    Seconds
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <p class="timer-date">
+            Since July 10, 2026 💚
+        </p>
+
+        <p class="timer-caption">
+            And the timer keeps going...
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WORSHIP
+===================================================== -->
+
+<section
+    id="worship"
+    class="section worship-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            02
+        </span>
+
+        <h2>
+            You in <span>Worship</span>
+        </h2>
+
+        <p>
+            There's something beautiful about seeing
+            you doing something you love.
+        </p>
+
+    </div>
+
+
+    <div class="worship-container">
+
+        <div class="worship-image">
+
+            <img
+                src="pictures/1000364819.jpg"
+                alt="Her during worship"
+            >
+
+        </div>
+
+
+        <div class="worship-text">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+            <p>
+                One of the things I really admire about
+                you is seeing the passion you have
+                when you worship.
+            </p>
+
+            <p>
+                There's something about seeing you like
+                this that I can't really put into words.
+            </p>
+
+            <span class="little-heart">
+                ♡
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VIDEO
+===================================================== -->
+
+<section
+    id="video"
+    class="section video-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            03
+        </span>
+
+        <h2>
+            One of My
+            <span>Favourite</span>
+            Videos
+        </h2>
+
+        <p>
+            I don't know if you know
+            how much I like this one.
+        </p>
+
+    </div>
+
+
+    <div class="video-container">
+
+        <video
+            controls
+            playsinline
+            poster="pictures/1000382790.jpg"
+        >
+
+            <source
+                src="pictures/1000373310.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support video playback.
+
+        </video>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     US
+===================================================== -->
+
+<section
+    id="us"
+    class="section us-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            04
+        </span>
+
+        <h2>
+            <span>Us</span>
+        </h2>
+
+        <p>
+            And then there's this one...
+        </p>
+
+    </div>
+
+
+    <div class="us-photo-container">
+
+        <div class="photo-frame">
+
+            <img
+                src="pictures/me and her.jpg"
+                alt="A picture of us"
+            >
+
+        </div>
+
+
+        <div class="photo-caption">
+
+            <p>
+                One of my favourite pictures.
+            </p>
+
+            <span>
+                ♡
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="section gallery-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            05
+        </span>
+
+        <h2>
+            A Few of My
+            <span>Favourite</span>
+            Pictures
+        </h2>
+
+        <p>
+            Because apparently,
+            choosing just one wasn't possible.
+        </p>
+
+    </div>
+
+
+    <div class="slideshow">
+
+
+        <div class="slide active">
+
+            <img
+                src="pictures/1000375830.jpg"
+                alt="Memory 1"
+            >
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="pictures/1000366392.jpg"
+                alt="Memory 2"
+            >
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="pictures/1000376874.jpg"
+                alt="Memory 3"
+            >
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="pictures/1000365113.jpg"
+                alt="Memory 4"
+            >
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="pictures/1000366873.jpg"
+                alt="Memory 5"
+            >
+
+        </div>
+
+
+        <div class="slide">
+
+            <img
+                src="pictures/1000382802.jpg"
+                alt="Memory 6"
+            >
+
+        </div>
+
+
+        <button
+            class="slide-button previous"
+            id="previousButton"
+            type="button"
+            aria-label="Previous picture"
+        >
+            ‹
+        </button>
+
+
+        <button
+            class="slide-button next"
+            id="nextButton"
+            type="button"
+            aria-label="Next picture"
+        >
+            ›
+        </button>
+
+    </div>
+
+
+    <div class="dots">
+
+        <span
+            class="dot active-dot"
+            data-slide="0"
+        ></span>
+
+        <span
+            class="dot"
+            data-slide="1"
+        ></span>
+
+        <span
+            class="dot"
+            data-slide="2"
+        ></span>
+
+        <span
+            class="dot"
+            data-slide="3"
+        ></span>
+
+        <span
+            class="dot"
+            data-slide="4"
+        ></span>
+
+        <span
+            class="dot"
+            data-slide="5"
+        ></span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     10 THINGS
+===================================================== -->
+
+<section
+    id="things"
+    class="section things-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            06
+        </span>
+
+        <h2>
+            10 Things I
+            <span>Like</span>
+            About You
+        </h2>
+
+        <p>
+            And trust me,
+            I could've made this list much longer.
+        </p>
+
+    </div>
+
+
+    <div class="things-grid">
+
+
+        <div class="thing-card">
+
+            <span>01</span>
+
+            <h3>
+                Your smile
+            </h3>
+
+            <p>
+                There's something about your smile
+                that instantly makes things feel better.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>02</span>
+
+            <h3>
+                Your laugh
+            </h3>
+
+            <p>
+                Especially when you genuinely
+                find something funny.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>03</span>
+
+            <h3>
+                Your kindness
+            </h3>
+
+            <p>
+                The way you treat people
+                says a lot about you.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>04</span>
+
+            <h3>
+                Your passion
+            </h3>
+
+            <p>
+                I love seeing you care deeply
+                about the things that matter to you.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>05</span>
+
+            <h3>
+                Your personality
+            </h3>
+
+            <p>
+                You have a way of making
+                conversations feel easy and natural.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>06</span>
+
+            <h3>
+                Your faith
+            </h3>
+
+            <p>
+                Seeing how important your faith is
+                to you is something I really admire.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>07</span>
+
+            <h3>
+                Your little habits
+            </h3>
+
+            <p>
+                Even the random little things
+                you probably don't realise I notice.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>08</span>
+
+            <h3>
+                How you make me feel
+            </h3>
+
+            <p>
+                Somehow talking to you can turn
+                an ordinary day into a good one.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card">
+
+            <span>09</span>
+
+            <h3>
+                Being around you
+            </h3>
+
+            <p>
+                There's a comfort in being around
+                you that I really appreciate.
+            </p>
+
+        </div>
+
+
+        <div class="thing-card special-card">
+
+            <span>10</span>
+
+            <h3>
+                Just you.
+            </h3>
+
+            <p>
+                Honestly, I could keep going.
+                I just really like you for you.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL MESSAGE
+===================================================== -->
+
+<section class="message-section">
+
+    <div class="message-content">
+
+        <span>
+            And after all of that...
+        </span>
+
+        <h2>
+            I prayed for the courage
+            <br>
+            to ask you something.
+        </h2>
+
+        <div class="heart-line">
+            ♡
+        </div>
+
+        <p>
+            So here it goes...
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL QUESTION
+===================================================== -->
+
+<section
+    id="question"
+    class="question-section"
+>
+
+    <div id="question-content">
+
+        <p class="question-small">
+            So...
+        </p>
+
+        <h1>
+            May I have the honour of
+            <br>
+            being your <span>boyfriend?</span>
+        </h1>
+
+        <p class="question-subtitle">
+            💚
+        </p>
+
+
+        <div class="answer-buttons">
+
+            <button
+                class="yes-button"
+                id="yesButton"
+                type="button"
+            >
+                Yes 💚
+            </button>
+
+            <button
+                class="yes-button"
+                id="absolutelyButton"
+                type="button"
+            >
+                Absolutely Yes 💚
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="success-message"
+        class="success-message hidden"
+    >
+
+        <div class="success-heart">
+            ♥
+        </div>
+
+        <h2>
+            You said yes! 🥹
+        </h2>
+
+        <p>
+            I guess this means I can officially
+            call you my girlfriend now. 💚
+        </p>
+
+        <p class="small-success">
+            Here's to whatever comes next...
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        Made with love 💚
+    </p>
+
+    <p>
+        Ecclesiastes 4:12
+    </p>
+
+</footer>
+
+
+</main>
+
+
+<script src="home.js"></script>
+
+</body>
+
+</html>
